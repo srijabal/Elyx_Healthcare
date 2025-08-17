@@ -3,6 +3,9 @@ uvicorn
 sqlalchemy
 psycopg2-binary
 pydantic
+pydantic-settings
+langchain
+langgraph
 groq
 supabase
 python-multipart
