@@ -1,28 +1,55 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222.2 84% 4.9%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222.2 84% 4.9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
+    --background: oklch(0.9777 0.0041 301.4256);
+    --foreground: oklch(0.3651 0.0325 287.0807);
+    --card: oklch(1.0000 0 0);
+    --card-foreground: oklch(0.3651 0.0325 287.0807);
+    --popover: oklch(1.0000 0 0);
+    --popover-foreground: oklch(0.3651 0.0325 287.0807);
+    --primary: oklch(0.6104 0.0767 299.7335);
+    --primary-foreground: oklch(0.9777 0.0041 301.4256);
+    --secondary: oklch(0.8957 0.0265 300.2416);
+    --secondary-foreground: oklch(0.3651 0.0325 287.0807);
+    --muted: oklch(0.8906 0.0139 299.7754);
+    --muted-foreground: oklch(0.5288 0.0375 290.7895);
+    --accent: oklch(0.7889 0.0802 359.9375);
+    --accent-foreground: oklch(0.3394 0.0441 1.7583);
+    --destructive: oklch(0.6332 0.1578 22.6734);
+    --destructive-foreground: oklch(0.9777 0.0041 301.4256);
+    --border: oklch(0.8447 0.0226 300.1421);
+    --input: oklch(0.9329 0.0124 301.2783);
+    --ring: oklch(0.6104 0.0767 299.7335);
+    --chart-1: oklch(0.6104 0.0767 299.7335);
+    --chart-2: oklch(0.7889 0.0802 359.9375);
+    --chart-3: oklch(0.7321 0.0749 169.8670);
+    --chart-4: oklch(0.8540 0.0882 76.8292);
+    --chart-5: oklch(0.7857 0.0645 258.0839);
+    --sidebar: oklch(0.9554 0.0082 301.3541);
+    --sidebar-foreground: oklch(0.3651 0.0325 287.0807);
+    --sidebar-primary: oklch(0.6104 0.0767 299.7335);
+    --sidebar-primary-foreground: oklch(0.9777 0.0041 301.4256);
+    --sidebar-accent: oklch(0.7889 0.0802 359.9375);
+    --sidebar-accent-foreground: oklch(0.3394 0.0441 1.7583);
+    --sidebar-border: oklch(0.8719 0.0198 302.1690);
+    --sidebar-ring: oklch(0.6104 0.0767 299.7335);
+    --font-sans: Geist, sans-serif;
+    --font-serif: "Lora", Georgia, serif;
+    --font-mono: "Fira Code", "Courier New", monospace;
     --radius: 0.5rem;
-    
+    --shadow-2xs: 1px 2px 5px 1px hsl(0 0% 0% / 0.03);
+    --shadow-xs: 1px 2px 5px 1px hsl(0 0% 0% / 0.03);
+    --shadow-sm: 1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 1px 2px 0px hsl(0 0% 0% / 0.06);
+    --shadow: 1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 1px 2px 0px hsl(0 0% 0% / 0.06);
+    --shadow-md: 1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 2px 4px 0px hsl(0 0% 0% / 0.06);
+    --shadow-lg: 1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 4px 6px 0px hsl(0 0% 0% / 0.06);
+    --shadow-xl: 1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 8px 10px 0px hsl(0 0% 0% / 0.06);
+    --shadow-2xl: 1px 2px 5px 1px hsl(0 0% 0% / 0.15);
+    --tracking-normal: 0em;
+    --spacing: 0.25rem;
+
     /* Health Journey Agent Colors */
     --agent-doctor: 221.2 83.2% 53.3%;      /* Dr. Warren - blue */
     --agent-nutrition: 142.1 76.2% 36.3%;   /* Ruby - green */
@@ -31,7 +58,7 @@
     --agent-mental: 188.7 85.7% 53.3%;      /* Rachel - cyan */
     --agent-manager: 238.7 83.5% 66.7%;     /* Neel - indigo */
     --member: 215.4 16.3% 46.9%;            /* Rohan - gray */
-    
+
     /* Progress Colors */
     --improvement: 142.1 76.2% 36.3%;       /* Positive changes */
     --concern: 32.6 94.6% 43.7%;           /* Needs attention */
@@ -39,26 +66,118 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 84% 4.9%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 94.1%;
+    --background: oklch(0.2166 0.0215 292.8474);
+    --foreground: oklch(0.9053 0.0245 293.5570);
+    --card: oklch(0.2544 0.0301 292.7315);
+    --card-foreground: oklch(0.9053 0.0245 293.5570);
+    --popover: oklch(0.2544 0.0301 292.7315);
+    --popover-foreground: oklch(0.9053 0.0245 293.5570);
+    --primary: oklch(0.7058 0.0777 302.0489);
+    --primary-foreground: oklch(0.2166 0.0215 292.8474);
+    --secondary: oklch(0.4604 0.0472 295.5578);
+    --secondary-foreground: oklch(0.9053 0.0245 293.5570);
+    --muted: oklch(0.2560 0.0320 294.8380);
+    --muted-foreground: oklch(0.6974 0.0282 300.0614);
+    --accent: oklch(0.3181 0.0321 308.6149);
+    --accent-foreground: oklch(0.8391 0.0692 2.6681);
+    --destructive: oklch(0.6875 0.1420 21.4566);
+    --destructive-foreground: oklch(0.2166 0.0215 292.8474);
+    --border: oklch(0.3063 0.0359 293.3367);
+    --input: oklch(0.2847 0.0346 291.2726);
+    --ring: oklch(0.7058 0.0777 302.0489);
+    --chart-1: oklch(0.7058 0.0777 302.0489);
+    --chart-2: oklch(0.8391 0.0692 2.6681);
+    --chart-3: oklch(0.7321 0.0749 169.8670);
+    --chart-4: oklch(0.8540 0.0882 76.8292);
+    --chart-5: oklch(0.7857 0.0645 258.0839);
+    --sidebar: oklch(0.1985 0.0200 293.6639);
+    --sidebar-foreground: oklch(0.9053 0.0245 293.5570);
+    --sidebar-primary: oklch(0.7058 0.0777 302.0489);
+    --sidebar-primary-foreground: oklch(0.2166 0.0215 292.8474);
+    --sidebar-accent: oklch(0.3181 0.0321 308.6149);
+    --sidebar-accent-foreground: oklch(0.8391 0.0692 2.6681);
+    --sidebar-border: oklch(0.2847 0.0346 291.2726);
+    --sidebar-ring: oklch(0.7058 0.0777 302.0489);
+    --font-sans: Geist, sans-serif;
+    --font-serif: "Lora", Georgia, serif;
+    --font-mono: "Fira Code", "Courier New", monospace;
+    --radius: 0.5rem;
+    --shadow-2xs: 1px 2px 5px 1px hsl(0 0% 0% / 0.03);
+    --shadow-xs: 1px 2px 5px 1px hsl(0 0% 0% / 0.03);
+    --shadow-sm: 1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 1px 2px 0px hsl(0 0% 0% / 0.06);
+    --shadow: 1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 1px 2px 0px hsl(0 0% 0% / 0.06);
+    --shadow-md: 1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 2px 4px 0px hsl(0 0% 0% / 0.06);
+    --shadow-lg: 1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 4px 6px 0px hsl(0 0% 0% / 0.06);
+    --shadow-xl: 1px 2px 5px 1px hsl(0 0% 0% / 0.06), 1px 8px 10px 0px hsl(0 0% 0% / 0.06);
+    --shadow-2xl: 1px 2px 5px 1px hsl(0 0% 0% / 0.15);
+
+    /* Health Journey Agent Colors - Dark Mode */
+    --agent-doctor: 221.2 83.2% 53.3%;      /* Dr. Warren - blue */
+    --agent-nutrition: 142.1 76.2% 36.3%;   /* Ruby - green */
+    --agent-performance: 262.1 83.3% 57.8%; /* Advik - purple */
+    --agent-fitness: 24.6 95% 53.1%;        /* Carla - orange */
+    --agent-mental: 188.7 85.7% 53.3%;      /* Rachel - cyan */
+    --agent-manager: 238.7 83.5% 66.7%;     /* Neel - indigo */
+    --member: 215.4 16.3% 46.9%;            /* Rohan - gray */
+
+    /* Progress Colors - Dark Mode */
+    --improvement: 142.1 76.2% 36.3%;       /* Positive changes */
+    --concern: 32.6 94.6% 43.7%;           /* Needs attention */
+    --issue: 0 84.2% 60.2%;               /* Problems/setbacks */
   }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --shadow-2xs: var(--shadow-2xs);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow: var(--shadow);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
 }
 
 @layer base {
@@ -70,4 +189,278 @@
     color: hsl(var(--foreground));
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+}
+
+@layer utilities {
+  /* Enhanced shadows and effects */
+  .shadow-soft {
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.04), 0 1px 3px 0 rgba(0, 0, 0, 0.06) !important;
+  }
+  
+  .shadow-medium {
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.06), 0 2px 6px 0 rgba(0, 0, 0, 0.08) !important;
+  }
+  
+  .shadow-strong {
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.08), 0 4px 12px 0 rgba(0, 0, 0, 0.12) !important;
+  }
+  
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+  
+  /* Enhanced gradients */
+  .gradient-primary {
+    background: linear-gradient(135deg, oklch(var(--primary) / 0.1) 0%, oklch(var(--primary) / 0.05) 100%) !important;
+  }
+  
+  .gradient-success {
+    background: linear-gradient(135deg, oklch(var(--chart-3) / 0.1) 0%, oklch(var(--chart-3) / 0.05) 100%) !important;
+  }
+  
+  .gradient-warning {
+    background: linear-gradient(135deg, oklch(var(--chart-4) / 0.1) 0%, oklch(var(--chart-4) / 0.05) 100%) !important;
+  }
+  
+  /* Chart colors for theme consistency */
+  .text-chart-1 {
+    color: oklch(var(--chart-1)) !important;
+  }
+  .text-chart-2 {
+    color: oklch(var(--chart-2)) !important;
+  }
+  .text-chart-3 {
+    color: oklch(var(--chart-3)) !important;
+  }
+  .text-chart-4 {
+    color: oklch(var(--chart-4)) !important;
+  }
+  .text-chart-5 {
+    color: oklch(var(--chart-5)) !important;
+  }
+
+  /* Chart background colors */
+  .bg-chart-1 {
+    background-color: oklch(var(--chart-1)) !important;
+  }
+  .bg-chart-2 {
+    background-color: oklch(var(--chart-2)) !important;
+  }
+  .bg-chart-3 {
+    background-color: oklch(var(--chart-3)) !important;
+  }
+  .bg-chart-4 {
+    background-color: oklch(var(--chart-4)) !important;
+  }
+  .bg-chart-5 {
+    background-color: oklch(var(--chart-5)) !important;
+  }
+
+  /* Chart border colors */
+  .border-chart-1 {
+    border-color: oklch(var(--chart-1)) !important;
+  }
+  .border-chart-2 {
+    border-color: oklch(var(--chart-2)) !important;
+  }
+  .border-chart-3 {
+    border-color: oklch(var(--chart-3)) !important;
+  }
+  .border-chart-4 {
+    border-color: oklch(var(--chart-4)) !important;
+  }
+  .border-chart-5 {
+    border-color: oklch(var(--chart-5)) !important;
+  }
+
+  /* Chart opacity variants */
+  .bg-chart-1\/10 {
+    background-color: oklch(var(--chart-1) / 0.1) !important;
+  }
+  .bg-chart-2\/10 {
+    background-color: oklch(var(--chart-2) / 0.1) !important;
+  }
+  .bg-chart-3\/10 {
+    background-color: oklch(var(--chart-3) / 0.1) !important;
+  }
+  .bg-chart-4\/10 {
+    background-color: oklch(var(--chart-4) / 0.1) !important;
+  }
+  .bg-chart-5\/10 {
+    background-color: oklch(var(--chart-5) / 0.1) !important;
+  }
+
+  .border-chart-1\/20 {
+    border-color: oklch(var(--chart-1) / 0.2) !important;
+  }
+  .border-chart-2\/20 {
+    border-color: oklch(var(--chart-2) / 0.2) !important;
+  }
+  .border-chart-3\/20 {
+    border-color: oklch(var(--chart-3) / 0.2) !important;
+  }
+  .border-chart-4\/20 {
+    border-color: oklch(var(--chart-4) / 0.2) !important;
+  }
+  .border-chart-5\/20 {
+    border-color: oklch(var(--chart-5) / 0.2) !important;
+  }
+
+  .border-chart-1\/30 {
+    border-color: oklch(var(--chart-1) / 0.3) !important;
+  }
+  .border-chart-2\/30 {
+    border-color: oklch(var(--chart-2) / 0.3) !important;
+  }
+  .border-chart-3\/30 {
+    border-color: oklch(var(--chart-3) / 0.3) !important;
+  }
+  .border-chart-4\/30 {
+    border-color: oklch(var(--chart-4) / 0.3) !important;
+  }
+  .border-chart-5\/30 {
+    border-color: oklch(var(--chart-5) / 0.3) !important;
+  }
+
+  /* Agent colors */
+  .text-agent-doctor {
+    color: hsl(var(--agent-doctor)) !important;
+  }
+  .text-agent-nutrition {
+    color: hsl(var(--agent-nutrition)) !important;
+  }
+  .text-agent-performance {
+    color: hsl(var(--agent-performance)) !important;
+  }
+  .text-agent-fitness {
+    color: hsl(var(--agent-fitness)) !important;
+  }
+  .text-agent-mental {
+    color: hsl(var(--agent-mental)) !important;
+  }
+  .text-agent-manager {
+    color: hsl(var(--agent-manager)) !important;
+  }
+
+  .bg-agent-doctor {
+    background-color: hsl(var(--agent-doctor)) !important;
+  }
+  .bg-agent-nutrition {
+    background-color: hsl(var(--agent-nutrition)) !important;
+  }
+  .bg-agent-performance {
+    background-color: hsl(var(--agent-performance)) !important;
+  }
+  .bg-agent-fitness {
+    background-color: hsl(var(--agent-fitness)) !important;
+  }
+  .bg-agent-mental {
+    background-color: hsl(var(--agent-mental)) !important;
+  }
+  .bg-agent-manager {
+    background-color: hsl(var(--agent-manager)) !important;
+  }
+
+  /* Progress colors */
+  .text-improvement {
+    color: hsl(var(--improvement)) !important;
+  }
+  .text-concern {
+    color: hsl(var(--concern)) !important;
+  }
+  .text-issue {
+    color: hsl(var(--issue)) !important;
+  }
+
+  .bg-improvement {
+    background-color: hsl(var(--improvement)) !important;
+  }
+  .bg-concern {
+    background-color: hsl(var(--concern)) !important;
+  }
+  .bg-issue {
+    background-color: hsl(var(--issue)) !important;
+  }
+
+  /* Override hardcoded colors with theme colors - Higher specificity */
+  .bg-gray-50, .bg-gray-100 { background-color: oklch(var(--muted)) !important; }
+  .text-gray-600, .text-gray-700, .text-gray-500 { color: oklch(var(--muted-foreground)) !important; }
+  .text-gray-900 { color: oklch(var(--foreground)) !important; }
+  
+  /* Primary colors (blue variants) */
+  .bg-blue-50 { background-color: oklch(var(--primary) / 0.1) !important; }
+  .bg-blue-100 { background-color: oklch(var(--primary) / 0.2) !important; }
+  .bg-blue-500, .bg-blue-600 { background-color: oklch(var(--primary)) !important; }
+  .text-blue-500, .text-blue-600, .text-blue-700 { color: oklch(var(--primary)) !important; }
+  .border-blue-500, .border-blue-200, .border-blue-300 { border-color: oklch(var(--primary)) !important; }
+  
+  /* Success colors (green variants) */
+  .bg-green-50 { background-color: oklch(var(--chart-3) / 0.1) !important; }
+  .bg-green-100 { background-color: oklch(var(--chart-3) / 0.2) !important; }
+  .bg-green-500, .bg-green-600 { background-color: oklch(var(--chart-3)) !important; }
+  .text-green-500, .text-green-600, .text-green-700 { color: oklch(var(--chart-3)) !important; }
+  .border-green-500, .border-green-200 { border-color: oklch(var(--chart-3)) !important; }
+  
+  /* Warning colors (orange/yellow variants) */
+  .bg-orange-50, .bg-yellow-50 { background-color: oklch(var(--chart-4) / 0.1) !important; }
+  .bg-orange-100, .bg-yellow-100 { background-color: oklch(var(--chart-4) / 0.2) !important; }
+  .bg-orange-500, .bg-orange-600, .bg-yellow-500, .bg-yellow-600 { background-color: oklch(var(--chart-4)) !important; }
+  .text-orange-500, .text-orange-600, .text-orange-700, .text-yellow-500, .text-yellow-600, .text-yellow-700 { color: oklch(var(--chart-4)) !important; }
+  .border-orange-500, .border-orange-200, .border-yellow-500, .border-yellow-200 { border-color: oklch(var(--chart-4)) !important; }
+  
+  /* Error colors (red variants) */
+  .text-red-500, .text-red-600, .text-red-700 { color: oklch(var(--destructive)) !important; }
+  .bg-red-50 { background-color: oklch(var(--destructive) / 0.1) !important; }
+  .bg-red-100 { background-color: oklch(var(--destructive) / 0.2) !important; }
+  .bg-red-500, .bg-red-600 { background-color: oklch(var(--destructive)) !important; }
+  .border-red-500, .border-red-200 { border-color: oklch(var(--destructive)) !important; }
+  
+  /* Purple variants for performance agent */
+  .bg-purple-50 { background-color: hsl(var(--agent-performance) / 0.1) !important; }
+  .bg-purple-100 { background-color: hsl(var(--agent-performance) / 0.2) !important; }
+  .bg-purple-500, .bg-purple-600 { background-color: hsl(var(--agent-performance)) !important; }
+  .text-purple-500, .text-purple-600, .text-purple-700 { color: hsl(var(--agent-performance)) !important; }
+  .border-purple-500, .border-purple-200 { border-color: hsl(var(--agent-performance)) !important; }
+  
+  /* Cyan variants for mental health agent */
+  .bg-cyan-50 { background-color: hsl(var(--agent-mental) / 0.1) !important; }
+  .bg-cyan-100 { background-color: hsl(var(--agent-mental) / 0.2) !important; }
+  .bg-cyan-500, .bg-cyan-600 { background-color: hsl(var(--agent-mental)) !important; }
+  .text-cyan-500, .text-cyan-600, .text-cyan-700 { color: hsl(var(--agent-mental)) !important; }
+  .border-cyan-500, .border-cyan-200 { border-color: hsl(var(--agent-mental)) !important; }
+  
+  /* Indigo variants for manager agent */
+  .bg-indigo-50 { background-color: hsl(var(--agent-manager) / 0.1) !important; }
+  .bg-indigo-100 { background-color: hsl(var(--agent-manager) / 0.2) !important; }
+  .bg-indigo-500, .bg-indigo-600 { background-color: hsl(var(--agent-manager)) !important; }
+  .text-indigo-500, .text-indigo-600, .text-indigo-700 { color: hsl(var(--agent-manager)) !important; }
+  .border-indigo-500, .border-indigo-200 { border-color: hsl(var(--agent-manager)) !important; }
+  
+  /* Force vibrant colors and override any opacity issues */
+  .text-chart-1, .text-chart-2, .text-chart-3, .text-chart-4, .text-chart-5 {
+    opacity: 1 !important;
+    filter: none !important;
+  }
+  
+  /* Ensure chart colors are vibrant */
+  [class*="text-chart-"] {
+    opacity: 1 !important;
+    filter: none !important;
+  }
+  
+  /* Override any potential opacity on icons */
+  svg {
+    opacity: 1 !important;
+  }
+  
+  /* Ensure background colors are solid */
+  [class*="bg-chart-"] {
+    opacity: 1 !important;
+  }
+  
+  /* Ensure SVG icons and other elements use theme colors */
+  svg[class*="text-"] { color: inherit !important; }
+  .fill-current { fill: currentColor !important; }
+  .stroke-current { stroke: currentColor !important; }
 }

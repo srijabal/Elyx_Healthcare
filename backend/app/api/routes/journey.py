@@ -91,7 +91,7 @@ async def get_member_journey(member_id: str, db: Session = Depends(get_db)):
                     "content": msg.content,
                     "message_type": msg.message_type,
                     "timestamp": msg.timestamp,
-                    "context": msg.context_data
+                    "context_data": msg.context_data
                 } for msg in messages
             ],
             "health_events": [

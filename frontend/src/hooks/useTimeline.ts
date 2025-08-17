@@ -10,7 +10,20 @@ export function useTimeline(journeyData?: JourneyData) {
     // Create timeline data for each month
     for (let month = 1; month <= 8; month++) {
       const monthState = journeyData.journey_states.find(state => state.month === month);
-      const monthMessages = journeyData.messages.filter(msg => msg.context_data.month === month);
+      const monthMessages = journeyData.messages.filter(msg => {
+        // Try context_data.month first, fallback to extracting from timestamp
+        if (msg.context_data?.month) {
+          return msg.context_data.month === month;
+        }
+        // Extract month from timestamp
+        try {
+          const date = new Date(msg.timestamp);
+          const messageMonth = date.getMonth() + 1; // getMonth() returns 0-11
+          return messageMonth === month;
+        } catch {
+          return false;
+        }
+      });
       const monthEvents = journeyData.health_events.filter(event => {
         const eventDate = new Date(event.event_date);
         return eventDate.getMonth() + 1 === month;
@@ -49,6 +62,19 @@ export function useTimeline(journeyData?: JourneyData) {
 
 export function useMessagesByMonth(messages: Message[], month: number) {
   return useMemo(() => {
-    return messages.filter(msg => msg.context_data.month === month);
+    return messages.filter(msg => {
+      // Try context_data.month first, fallback to extracting from timestamp
+      if (msg.context_data?.month) {
+        return msg.context_data.month === month;
+      }
+      // Extract month from timestamp
+      try {
+        const date = new Date(msg.timestamp);
+        const messageMonth = date.getMonth() + 1;
+        return messageMonth === month;
+      } catch {
+        return false;
+      }
+    });
   }, [messages, month]);
 }

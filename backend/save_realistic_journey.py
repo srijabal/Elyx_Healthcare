@@ -67,6 +67,11 @@ def save_realistic_journey_to_db():
         # 3. Create message records
         messages = journey_data.get("messages", [])
         message_count = 0
+        print(f"   - Processing {len(messages)} messages...")
+        
+        # Debug: check first few messages
+        for i, msg in enumerate(messages[:3]):
+            print(f"   - Debug msg {i+1}: agent={msg.get('agent_name')}, month={msg.get('month', 'MISSING')}, day={msg.get('day', 'MISSING')}")
         
         for msg in messages:
             agent_name = msg.get("agent_name", "Neel")
@@ -86,18 +91,24 @@ def save_realistic_journey_to_db():
             elif not isinstance(timestamp, datetime):
                 timestamp = datetime.now()
             
+            context_data = {
+                "day": msg.get("day", 1),
+                "month": msg.get("month", 1),
+                "is_member_initiated": msg.get("is_member_initiated", False),
+                "sender": agent_name  # Track who sent the message
+            }
+            
+            # Debug print for first message
+            if message_count == 0:
+                print(f"   - Debug first message context_data: {context_data}")
+            
             message = Message(
                 member_id=member.id,
                 agent_id=agent_id,
                 content=msg.get("content", ""),
                 message_type=msg.get("message_type", "general"),
                 timestamp=timestamp,
-                context_data={
-                    "day": msg.get("day", 1),
-                    "month": msg.get("month", 1),
-                    "is_member_initiated": msg.get("is_member_initiated", False),
-                    "sender": agent_name  # Track who sent the message
-                }
+                context_data=context_data
             )
             db.add(message)
             message_count += 1
