@@ -1,0 +1,38 @@
+# Environment variables
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Generated journey data (keep database, not JSON exports)
+rohan_journey_data_*.json
+journey_export_*.json
+
+# Temporary files
+tmp/
+temp/
