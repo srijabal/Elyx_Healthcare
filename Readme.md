@@ -5,42 +5,7 @@
 [![Groq](https://img.shields.io/badge/Groq-LLaMA_3.3_70B-orange)](https://groq.com/)
 [![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-green)](https://supabase.com/)
 
-> **Elyx Hackathon 2024** - Transforming healthcare through AI-powered decision traceability
-
 An innovative health journey visualization system that tracks AI-driven health interventions and their real-world impact on patient outcomes. Built for the Elyx Healthcare Hackathon.
-
-## 🌟 Key Features
-
-### 🤖 **AI-Powered Multi-Agent System**
-- **6 Specialized Health Agents**: Dr. Warren (Medical), Ruby (Nutrition), Advik (Fitness), Carla (Mental Health), Rachel (Sleep), Neel (Lifestyle)
-- **Groq LLaMA 3.3-70b Integration**: Advanced conversational AI for realistic health interactions
-- **Contextual Decision Making**: AI responses based on real-time biomarker data and health context
-
-### 📊 **Advanced Health Visualization**
-- **Interactive 8-Month Timeline**: Month-by-month health transformation tracking
-- **Real-time Biomarker Charts**: Blood pressure, weight, stress levels, sleep patterns, adherence rates
-- **Quarterly Diagnostic Reports**: Comprehensive health assessments with improvement tracking
-- **Progress Visualization**: Before/after comparisons with percentage improvements
-
-### 🔍 **AI Decision Traceability** *(Our Innovation)*
-- **Health Impact Analysis**: See exactly how AI recommendations affect real health outcomes
-- **Decision Drill-Down**: Deep dive into intervention rationale and expected vs. actual results
-- **Biomarker Correlation**: Track how specific AI advice influences subsequent health metrics
-- **Transparency Dashboard**: Full audit trail of AI decisions and their health consequences
-
-### 💬 **Realistic Health Conversations**
-- **160+ AI-Generated Messages**: Authentic member-agent interactions over 8 months
-- **WhatsApp-Style Interface**: Familiar chat experience with medical context
-- **Smart Filtering**: View conversations by month or across entire journey
-- **Contextual Responses**: AI agents respond based on current health status and history
-
-## 🎯 **Use Case: Rohan's Transformation**
-
-**Patient Profile**: Rohan Patel, 32-year-old software engineer with pre-hypertension
-- **Starting Point**: BP 138/88, Weight 75kg, Stress 8/10
-- **8-Month Journey**: 160+ interactions with AI health team
-- **Final Results**: BP 115/72, Weight 71.5kg, Stress 3/10
-- **Success Rate**: 23% BP improvement, 4.7% weight loss, 62% stress reduction
 
 ## 🏗️ **Technical Architecture**
 
@@ -140,16 +105,7 @@ npm run dev
 
 ## 🎨 **Key Features in Detail**
 
-### **Multi-Agent AI System**
-Each AI agent has specialized expertise:
-- **Dr. Warren**: Medical advice, diagnostic interpretation
-- **Ruby**: Nutritional guidance, meal planning
-- **Advik**: Fitness coaching, exercise routines
-- **Carla**: Mental health support, stress management
-- **Rachel**: Sleep optimization, recovery protocols
-- **Neel**: Lifestyle coordination, habit formation
-
-### **Decision Traceability Innovation**
+### **Decision Traceability**
 Our breakthrough feature shows:
 1. **Decision Context**: Health status when AI made recommendation
 2. **Intervention Details**: Specific advice given and rationale
@@ -203,37 +159,3 @@ GET  /api/v1/health                         # Health check endpoint
 - **Backend**: Railway
 - **Database**: Supabase Cloud
 - **AI**: Groq Cloud
-
-## 🏆 **Hackathon Innovation**
-
-### **Problem Statement**
-Traditional health apps track data but can't explain HOW AI decisions impact health outcomes.
-
-### **Our Solution**
-**AI Decision Traceability** - The first system to show direct causality between AI recommendations and measurable health improvements.
-
-### **Competitive Advantage**
-- **Transparency**: Full audit trail of AI decision-making
-- **Accountability**: Measure actual vs. predicted outcomes
-- **Trust**: Patients see exactly how AI advice helps them
-- **Learning**: AI improves based on real-world results
-
-### **Business Impact**
-- **For Patients**: Trust AI recommendations with proven results
-- **For Doctors**: Understand AI reasoning and validate interventions
-- **For Healthcare**: Improve AI models based on outcome data
-- **For Insurance**: Validate effectiveness of AI-driven care
-
-## 📄 **License**
-
-This project is licensed under the MIT License.
-
-## 🤝 **Contributing**
-
-We welcome contributions! Please create an issue or submit a pull request.
-
----
-
-**Built with ❤️ for the Elyx Healthcare Hackathon 2024**
-
-*Transforming healthcare through AI transparency and accountability*
