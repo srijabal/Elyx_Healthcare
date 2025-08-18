@@ -100,8 +100,8 @@ npm run dev
 ## 🌐 **Live Demo**
 
 - **🖥️ Frontend**: [https://elyx-healthcare.vercel.app](https://elyx-healthcare.vercel.app)
-- **🔗 Backend API**: [https://elyxhealthcare-production.up.railway.app](https://elyxhealthcare-production.up.railway.app)
-- **📚 API Documentation**: [https://elyxhealthcare-production.up.railway.app/docs](https://elyxhealthcare-production.up.railway.app/docs)
+- **🔗 Backend API**: [https://elyx-healthcare.onrender.com](https://elyx-healthcare.onrender.com)
+- **📚 API Documentation**: [https://elyx-healthcare.onrender.com/docs](https://elyx-healthcare.onrender.com/docs)
 
 ## 🎨 **Key Features in Detail**
 
